@@ -1,10 +1,12 @@
 // Assignment code here
-const randomFunc = {
-	lower: getRandomLower,
-	upper: getRandomUpper,
-	number: getRandomNumber,
-	symbol: getRandomSymbol
-}
+var enter;
+var	lower;
+var	symbol;
+var number;
+var upper; 
+var space = [];
+var choices;
+
 //Generator functions
 function getRandomLower(){
   return String.fromCharCode(Math.floor(Math.random()*26)+97);
@@ -17,30 +19,48 @@ function getRandomNumber(){
 }
 function getRandomSymbol(){
   const symbol = "!@#$%^&*(){}[]=<>/,.|~?";
-  return symbol[Math.floor(Math.random()*symbol.length)];
-}
-
-function passwordCrai(){
-var length = window.prompt(" How many characters would you like your password? Choose between 8 and 128. ");
-while (length < 8 || length > 128 ){
-  window.alert(" You need to have a valid answer. ")
-  return passwordCrai()
-}
-var lower =confirm(" Will this contain Lowercase letters? ");
-if ( lower === true){
- getRandomLower()
- console.log(getRandomLower());
+  return symbol[Math.floor(Math.random()*symbol.enter)];
 }
 
 
+
+
+
+
+
+
+
+
+
+function generatePassword(){
+var enter = parseInt(prompt(" How many characters would you like your password? Choose between 8 and 128. "));
+if (!enter) {
+  alert(" This need a value")
+   } else if  (enter < 8 || enter > 128 || enter == null ){
+  enter = parseInt(prompt(" You must choose a # between 8 and 128. "))
+  return generatePassword()
+} else {
+  upper = confirm(" You want it to contain a UpperCase letters? ");
+  lower = confirm(" You want it to lowerCase letters? ");
+  number = confirm(" You want it to Number letters? ");
+  symbol = confirm(" You want it to Symbol letters? ");
+  
+}
 };
-passwordCrai();
 
-const myPassword = window.prompt("my password");
+
+    
+
+
+   
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+generateBtn.addEventListener("click", function () {
+  ps = generatePassword();
+  document.getElementById("password").placeholder = ps;
+});
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -48,8 +68,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
-
+};
 
 
 // Add event listener to generate button
