@@ -10,8 +10,10 @@ function getRandomUpper(){
 function getRandomNumber(){
   return String.fromCharCode(Math.floor(Math.random()*10)+48);
 }
-// Symbol arry
-  var symbol = ("!@#$%^&*()_+~`|}{[]\:;?><,./-=");
+  function getRandomSymbol(){
+    var symbol = "!@#$%^&*(){}[]=<>/,.|~?";
+    return symbol[Math.floor(Math.random()*symbol.length)];
+}
 
 // Variable Declaration 
 var confirmLength = "";
@@ -50,7 +52,7 @@ function generatePassword() {
   var passwordCharacters = []
       
     if (confirmSpecialCharacter) {
-      passwordCharacters = passwordCharacters.concat(symbol)
+      passwordCharacters = passwordCharacters.concat(getRandomSymbol())
     }
 
     if (confirmNumericCharacter) {
