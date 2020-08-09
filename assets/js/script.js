@@ -46,7 +46,6 @@ function generatePassword() {
     var confirmUpperCase = confirm("Click OK to confirm if you would like to include UPPERCASE characters ?");   
     } ;
 
-
     // Assign an action to the password parameters NEED TO FIX THIS
   var passwordCharacters = []
       
@@ -78,12 +77,10 @@ var randomPassword = ""
   return randomPassword;
   };
     
-
 // Get references to the #generate element
  var generateBtn = document.querySelector("#generate");
 
-
-// Write password to the #password input
+ // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -91,7 +88,6 @@ function writePassword() {
   passwordText.value = password;
 
 };
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
