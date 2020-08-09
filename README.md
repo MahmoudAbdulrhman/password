@@ -26,5 +26,9 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 * As a bonus, the user should also have the option to click a button to copy the password to their clipboard.
     * Copy execCommand in event listener
   ### Screen shot
-  ![](images/1.png)
+  ![](assets/images/1.png)
+  ![](assets/images/2.png)
+  ![](assets/images/3.png)
+  ![](assets/images/4.png)
+  
   
